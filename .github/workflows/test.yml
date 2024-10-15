@@ -1,23 +1,24 @@
-name: learn-github-acions
-run-name: ${{ github.actor }} is learning github actions
+name: learn github actions
+
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 jobs:
-  learn-github-actions:
+  lession1:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Set up Node.js environment
+        uses: actions/setup-node@v2
         with:
           node-version: "20"
-
       - name: Install dependencies
         run: |
-          npm install -g bats
-      - name: Check Bat version
+          npm install -g pm2
+
+      - name: check pm2 version
         run: |
-          bats -v
+          pm2 --version
