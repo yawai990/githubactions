@@ -9,7 +9,7 @@ on:
 jobs:
   create-s3:
     runs-on: ubuntu-latest
-    step:
+    steps:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
